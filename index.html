@@ -1,173 +1,1024 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>AKSD Shopping</title>
-  </head>
-  <body>
-    <header>
-      <div class="menu">
-        <div class="menu1">
-          <i class="fa-solid fa-bars-staggered"></i>
-          <p>Menu</p>
-        </div>
-        <div class="input-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search" />
-        </div>
-      </div>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solo Leveling Fitness - Ultimate Edition</title>
+<style>
+  /* Reset & basics */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a12;
+    color: #c8f0ff;
+    margin: 0;
+    padding: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: #22ffc8;
+    text-shadow: 0 0 8px #22ffc8;
+  }
+  p.subtitle {
+    text-align: center;
+    margin-top: -12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #7fffd4;
+    text-shadow: 0 0 4px #7fffd4;
+  }
 
-      <div class="logo">
-        <h2>AKSD</h2>
-      </div>
+  /* Level/EXP Bar */
+  #exp-bar {
+    background: #222533;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 24px;
+    margin: 10px auto 20px;
+    max-width: 600px;
+    box-shadow: 0 0 15px #22ffc8;
+  }
+  #exp-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #22ffc8, #00d8b5);
+    box-shadow: 0 0 12px #22ffc8;
+    transition: width 0.6s ease;
+  }
 
-      <div class="nav">
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Wishlist</a></li>
-          <li><a href="#">My AKGO</a></li>
-        </ul>
-      </div>
-    </header>
-    <main>
-      <div class="photo">
-        <img src="https://raw.githubusercontent.com/Areain/Ashok/main/img/file.webp" alt="image1" /><br />
-        <img src="https://raw.githubusercontent.com/Areain/Ashok/main/img/file2.webp" alt="image2" /><br />
-        <img src="https://raw.githubusercontent.com/Areain/Ashok/main/img/file%203.webp" alt="image3">
-      </div>
-      <div class="pthot-image">
-        <div class="fixed">
-          <h5>HUBA Vista Jacket</h5>
-          <div class="subname">
-            <p>Unisex Outerwear</p>
-            <p>Vista Jacket</p>
-          </div>
-          <div class="details">
-            <p>
-              This reflective polyester jacket offers a perfect blend of modern
-              design and practical functionality, making it an ideal choice for
-              various activities. It features a full front zipper and a mock
-              neck for added warmth, complemented by elastic bands at the sleeve
-              cuffs and hemline for a secure and comfortable fit. The jacket is
-              equipped with practical welt pockets on the front and an
-              additional inner pocket, providing ample space to keep your
-              essentials safe and accessible. Its reflective print logo on the
-              sleeve enhances visibility in low-light conditions, while the
-              stylish style lines on the front, back, and sleeves add a
-              sophisticated, tailored look.
-            </p>
-          </div>
-          <div class="made">
-            <p>Fabric: Reflective polyester</p>
-            <p>Fit: straight and relaxed</p>
-            <p>Made in Nepal</p>
-            <p>Wash care: wash with Cold water, tumble dry, do not bleach.</p>
-            <p class="margin">Model is 5 '6 " wearing a size M.</p>
-          </div>
-          <div class="price"><span>₨2,900.00</span></div>
+  /* Stats container */
+  #stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .stat {
+    background: #161823;
+    padding: 12px 20px;
+    border-radius: 12px;
+    min-width: 130px;
+    text-align: center;
+    box-shadow: 0 0 12px #22ffc8;
+    transition: transform 0.3s;
+  }
+  .stat:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00f7b9;
+  }
+  .stat-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #a4fff9;
+  }
+  .stat-value {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #22ffc8;
+  }
 
-          <div class="button">
-            <a
-              href="https://www.huba.com.np/cart-page?appSectionParams=%7B%22origin%22%3A%22cart-popup%22%7D"
-              ><p>PRE ORDER</p></a
-            >
-          </div>
-          <div class="size">
-            <p class="join">Size :</p>
-            <select required>
-              <option>Select Size</option>
-              <option>Small</option>
-              <option>Large</option>
-              <option>Extra Large</option>
-            </select>
-          </div>
-          <div class="color">
-            <p class="join">Colors :</p>
-            <div class="choose">
-              <div class="colors col1"></div>
-              <div class="colors col2"></div>
-              <div class="colors col3"></div>
-              <div class="colors col4"></div>
-              <div class="colors col5"></div>
-            </div>
-          </div>
-          <div class="quantity">
-            <p class="join">Quantity :</p>
-            <select>
-              <option>1</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </main>
+  /* Tasks containers */
+  #daily-tasks, #side-tasks {
+    margin-bottom: 40px;
+  }
+  .task {
+    background: #0f1320;
+    margin: 10px auto;
+    padding: 15px 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    box-shadow: 0 0 12px #00f7b9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  .task:hover {
+    background: #1a2633;
+  }
+  .task-desc {
+    font-weight: 600;
+    font-size: 1.05rem;
+    max-width: 75%;
+    color: #a0fff2;
+  }
+  .task-exp {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-left: 10px;
+    color: #00d8b5;
+    text-shadow: 0 0 4px #00d8b5;
+  }
+  button.complete-btn {
+    background: #22ffc8;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-weight: 700;
+    color: #0a0a12;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 0 10px #22ffc8;
+  }
+  button.complete-btn:hover:not(:disabled) {
+    box-shadow: 0 0 18px #00f7b9;
+  }
+  button.complete-btn:disabled {
+    background: #555;
+    cursor: default;
+    box-shadow: none;
+  }
 
-    <footer>
-      <div class="first-section">
-        <div class="first1">
-          <h1>AKSD</h1>
-        </div>
-        <div class="first2">
-          <h3>GET UPDATED</h3>
-          <div class="input-first">
-            <input type="text" placeholder="Enter your email"/>
-            <a href="#"><p>SUBSCRIBE</p></a>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="footer-container">
-        <div class="column1 colunm">
-            <h3>STAY IN TOUCH</h3>
-            <ul>
-                <li><a href="#">Kathmandu,Nepal</li>
-                <li><a href="#">+9899999</a></li>
-                <li><a href="#">info@gmail.com</a></li>
-       
-            </ul>
-        </div>
-        <div class="column2 colunm">
-            <h3>QUICK LINKS</h3>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-        </div>
-        <div class="column3 colunm">
-            <h3>SHOPPING</h3>
-            <ul>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Man</a></li>
-                <li><a href="#">Woman</a></li>
-                <li><a href="#">New In</a></li>
-            </ul>
-        </div>
-        <div class="column4 colunm">
-            <h3>COSTUMER SERVICE</h3>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Return Policy</a></li>
-                <li><a href="#">Refund Policy</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
-            </ul>
-        </div>
+  /* Level & Title display */
+  #level-display {
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #22ffc8;
+    text-shadow: 0 0 14px #22ffc8;
+  }
+  #title-display {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #00d8b5;
+    margin-bottom: 30px;
+    text-shadow: 0 0 12px #00d8b5;
+  }
 
-        
-      </div>
-      <hr class="nope">
-      <div class="credits">
-        <p>© AKSD, All Rights Reserved</p>
-      </div>
-    </footer>
-  </body>
+  /* Level up popup */
+  #level-up-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #22ffc8;
+    color: #0a0a12;
+    font-weight: 900;
+    padding: 14px 24px;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    box-shadow: 0 0 25px #22ffc8;
+    display: none;
+    user-select: none;
+    z-index: 1000;
+    animation: popupFade 2s forwards;
+  }
+  @keyframes popupFade {
+    0% {opacity: 0; transform: translateY(-20px);}
+    10%, 90% {opacity: 1; transform: translateY(0);}
+    100% {opacity: 0; transform: translateY(-20px);}
+  }
+
+  /* Achievements Section */
+  #achievements {
+    margin-bottom: 50px;
+  }
+  .achievement {
+    background: #0f1320;
+    border-radius: 15px;
+    box-shadow: 0 0 14px #22ffc8;
+    margin: 12px auto;
+    max-width: 600px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: box-shadow 0.4s;
+  }
+  .achievement.unlocked {
+    box-shadow: 0 0 30px #00ffca;
+  }
+  .achievement-icon {
+    font-size: 2.5rem;
+    color: #22ffc8;
+    user-select: none;
+  }
+  .achievement-content {
+    flex-grow: 1;
+  }
+  .achievement-title {
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #00ffc9;
+    text-shadow: 0 0 8px #00ffc9;
+  }
+  .achievement-desc {
+    font-size: 0.9rem;
+    color: #a0f0e5;
+  }
+  .achievement-progress {
+    font-weight: 700;
+    color: #00d8b5;
+    user-select: none;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 650px) {
+    .stat {
+      min-width: 100px;
+      font-size: 0.9rem;
+    }
+    .task {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    button.complete-btn {
+      margin-top: 8px;
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Solo Leveling Fitness</h1>
+<p class="subtitle">Level up your body, stats & skills Solo Leveling style!</p>
+
+<div id="level-display">Level 1</div>
+<div id="title-display">Easy</div>
+<div id="exp-bar">
+  <div id="exp-fill"></div>
+</div>
+
+<div id="stats"></div>
+
+<h2>Daily Tasks</h2>
+<div id="daily-tasks"></div>
+
+<h2>Side Tasks</h2>
+<div id="side-tasks"></div>
+
+<h2>Achievements & Badges</h2>
+<div id="achievements"></div>
+
+<div id="level-up-popup">Level Up!</div>
+
+<script>
+(() => {
+  // Data structures
+  const STAT_NAMES = ['Strength', 'Stamina', 'Intelligence', 'Agility', 'MP', 'Vitality', 'Endurance', 'Luck', 'Defense', 'Magic Attack'];
+
+  const LEVEL_TITLES = [
+    { level: 10, title: 'Easy' },
+    { level: 20, title: 'Easy+' },
+    { level: 30, title: 'Easy++' },
+    { level: 40, title: 'Easy+++' },
+    { level: 50, title: 'Medium' },
+    { level: 60, title: 'Medium+' },
+    { level: 70, title: 'Medium++' },
+    { level: 80, title: 'Intermediate' },
+    { level: 90, title: 'Hard' },
+    { level: 100, title: 'Hard++' },
+    { level: 110, title: 'Master' },
+    { level: 120, title: 'Master+' },
+    { level: 130, title: 'Grandmaster' },
+    { level: 140, title: 'Grandmaster+' },
+    { level: 150, title: 'Congratulations' }
+  ];
+
+  // Achievements based on level and stats
+  const ACHIEVEMENTS = [
+    { id: 'ach-level-10', title: 'First Steps', desc: 'Reach Level 10', type: 'level', target: 10, icon: '🥉' },
+    { id: 'ach-level-50', title: 'Getting Stronger', desc: 'Reach Level 50', type: 'level', target: 50, icon: '🥈' },
+    { id: 'ach-level-100', title: 'Elite Warrior', desc: 'Reach Level 100', type: 'level', target: 100, icon: '🥇' },
+    { id: 'ach-stat-strength-50', title: 'Powerhouse', desc: 'Reach 50 Strength', type: 'stat', stat: 'Strength', target: 50, icon: '💪' },
+    { id: 'ach-stat-luck-30', title: 'Lucky One', desc: 'Reach 30 Luck', type: 'stat', stat: 'Luck', target: 30, icon: '🍀' },
+    { id: 'ach-stat-mp-40', title: 'Mana Master', desc: 'Reach 40 MP', type: 'stat', stat: 'MP', target: 40, icon: '🔮' },
+  ];
+
+  // State saved in localStorage
+  let data = {
+    level: 1,
+    exp: 0,
+    expNeeded: 100,
+    stats: {},
+    dailyTasksDoneToday: {},
+    lastDailyDate: '',
+    sideTasksDone: {},
+    achievementsUnlocked: {}
+  };
+
+  // Initialize stats at 1
+  for (const s of STAT_NAMES) data.stats[s] = 1;
+
+  // Elements
+  const levelDisplay = document.getElementById('level-display');
+  const titleDisplay = document.getElementById('title-display');
+  const expFill = document.getElementById('exp-fill');
+  const statsDiv = document.getElementById('stats');
+  const dailyTasksDiv = document.getElementById('daily-tasks');
+  const sideTasksDiv = document.getElementById('side-tasks');
+  const achievementsDiv = document.getElementById('achievements');
+  const levelUpPopup = document.getElementById('level-up-popup');
+
+  // Utility: get today YYYY-MM-DD
+  function getTodayDate() {
+    const d = new Date();
+    return d.toISOString().slice(0,10);
+  }
+
+  // Experience needed to level up: exponential growth with base +10% per level
+  function getExpNeeded(level) {
+    return Math.floor(100 * Math.pow(1.1, level - 1));
+  }
+
+  // Level title based on current level
+  function getLevelTitle(level) {
+    for (let i = LEVEL_TITLES.length-1; i >= 0; i--) {
+      if (level >= LEVEL_TITLES[i].level) return LEVEL_TITLES[i].title;
+    }
+    return 'Novice';
+  }
+
+  // Save and Load data from localStorage
+  function saveData() {
+    localStorage.setItem('soloLevelingFitnessData', JSON.stringify(data));
+  }
+  function loadData() {
+    const saved = localStorage.getItem('soloLevelingFitnessData');
+    if (saved) {
+      try {
+        const obj = JSON.parse(saved);
+        // Validate keys to avoid broken data
+        if (obj.level) data.level = obj.level;
+        if (obj.exp !== undefined) data.exp = obj.exp;
+        if (obj.expNeeded) data.expNeeded = obj.expNeeded;
+        if (obj.stats) data.stats = obj.stats;
+        if (obj.dailyTasksDoneToday) data.dailyTasksDoneToday = obj.dailyTasksDoneToday;
+        if (obj.lastDailyDate) data.lastDailyDate = obj.lastDailyDate;
+        if (obj.sideTasksDone) data.sideTasksDone = obj.sideTasksDone;
+        if (obj.achievementsUnlocked) data.achievementsUnlocked = obj.achievementsUnlocked;
+      } catch (e) {
+        console.error('Failed to parse saved data', e);
+      }
+    }
+  }
+
+  // Generate fixed daily tasks, scaling difficulty & counts based on level
+  function generateDailyTasks(level) {
+    const baseTasks = [
+      { description: 'Run', baseAmount: 1, unit: 'km', baseExp: 50, stats: ['Stamina', 'Endurance'] },
+      { description: 'Push-ups', baseAmount: 20, unit: 'reps', baseExp: 70, stats: ['Strength', 'Endurance'] },
+      { description: 'Meditate', baseAmount: 10, unit: 'minutes', baseExp: 30, stats: ['Intelligence', 'MP'] },
+    ];
+    return baseTasks.map((t, i) => {
+      // Scale amount by 10% per 10 levels
+      const scaleFactor = 1 + (Math.floor(level/10) * 0.1);
+      const amount = Math.ceil(t.baseAmount * scaleFactor);
+      const exp = Math.floor(t.baseExp * scaleFactor);
+      return {
+        id: `daily${i+1}`,
+        description: `${t.description} ${amount} ${t.unit}`,
+        exp,
+        stats: t.stats
+      };
+    });
+  }
+
+  // Generate side tasks dynamically (example: 50 unique tasks scaled)
+  function generateSideTasks(level) {
+    const sideTemplates = [
+      { description: 'Drink water', baseAmount: 2, unit: 'liters', baseExp: 20, stats: ['Vitality'] },
+      { description: 'Walk', baseAmount: 5000, unit: 'steps', baseExp: 60, stats: ['Stamina'] },
+      { description: 'Stretch', baseAmount: 15, unit: 'minutes', baseExp: 40, stats: ['Agility'] },
+      { description: 'Squats', baseAmount: 30, unit: 'reps', baseExp: 65, stats: ['Strength', 'Endurance'] },
+      { description: 'Plank', baseAmount: 1, unit: 'minute', baseExp: 50, stats: ['Strength', 'Vitality'] },
+      { description: 'Jump rope', baseAmount: 300, unit: 'reps', baseExp: 80, stats: ['Agility', 'Stamina'] },
+      { description: 'Read a book', baseAmount: 20, unit: 'minutes', baseExp: 35, stats: ['Intelligence'] },
+      { description: 'Yoga', baseAmount: 20, unit: 'minutes', baseExp: 45, stats: ['Agility', 'Vitality'] }
+    ];
+    let tasks = [];
+    for (let i=0; i<50; i++) {
+      const tmpl = sideTemplates[i % sideTemplates.length];
+      const scaleFactor = 1 + (Math.floor(level/10)*0.15);
+      const amount = Math.ceil(tmpl.baseAmount * scaleFactor);
+      const exp = Math.floor(tmpl.baseExp * scaleFactor);
+      tasks.push({
+        id: `side${i+1}`,
+        description: `${tmpl.description} ${amount} ${tmpl.unit}`,
+        exp,
+        stats: tmpl.stats
+      });
+    }
+    return tasks;
+  }
+
+  // Render level, title and exp bar
+  function renderLevel() {
+    levelDisplay.textContent = `Level ${data.level}`;
+    titleDisplay.textContent = getLevelTitle(data.level);
+    const fillPercent = Math.min(100, (data.exp / data.expNeeded) * 100);
+    expFill.style.width = fillPercent + '%';
+  }
+
+  // Render stats
+  function renderStats() {
+    statsDiv.innerHTML = '';
+    for (const stat of STAT_NAMES) {
+      const statDiv = document.createElement('div');
+      statDiv.className = 'stat';
+      statDiv.innerHTML = `
+        <div class="stat-name">${stat}</div>
+        <div class="stat-value">${data.stats[stat]}</div>
+      `;
+      statsDiv.appendChild(statDiv);
+    }
+  }
+
+  // Render tasks (daily or side)
+  function renderTasks(tasks, container, isDaily) {
+    container.innerHTML = '';
+    tasks.forEach(task => {
+      const taskDiv = document.createElement('div');
+      taskDiv.className = 'task';
+
+      const descSpan = document.createElement('span');
+      descSpan.className = 'task-desc';
+      descSpan.textContent = task.description;
+
+      const expSpan = document.createElement('span');
+      expSpan.className = 'task-exp';
+      expSpan.textContent = `EXP: ${task.exp}`;
+
+      const btn = document.createElement('button');
+      btn.className = 'complete-btn';
+
+      // Check if done today (for daily) or done (for side)
+      const doneKey = task.id;
+      const done = isDaily ? data.dailyTasksDoneToday[doneKey] : data.sideTasksDone[doneKey];
+
+      btn.textContent = done ? 'Done' : 'Complete';
+      btn.disabled = done;
+
+      btn.onclick = () => {
+        // Complete task:
+        gainExp(task.exp);
+        increaseStats(task.stats);
+        // Mark done
+        if (isDaily) {
+          data.dailyTasksDoneToday[doneKey] = true;
+        } else {
+          data.sideTasksDone[doneKey] = true;
+        }
+        saveData();
+        renderLevel();
+        renderStats();
+        renderTasks(tasks, container, isDaily);
+        checkAchievements();
+      };
+
+      taskDiv.appendChild(descSpan);
+      taskDiv.appendChild(expSpan);
+      taskDiv.appendChild(btn);
+      container.appendChild(taskDiv);
+    });
+  }
+
+  // Increase stats by +1 per stat (can tweak)
+  function increaseStats(statsArr) {
+    statsArr.forEach(stat => {
+      if (data.stats[stat] !== undefined) {
+        data.stats[stat]++;
+      }
+    });
+  }
+
+  // Gain EXP and handle leveling up
+  function gainExp(amount) {
+    data.exp += amount;
+    let leveledUp = false;
+    while (data.exp >= data.expNeeded) {
+      data.exp -= data.expNeeded;
+      data.level++;
+      data.expNeeded = getExpNeeded(data.level);
+      leveledUp = true;
+    }
+    if (leveledUp) {
+      showLevelUpPopup();
+      checkAchievements();
+    }
+  }
+
+  // Level up popup animation
+  function showLevelUpPopup() {
+    levelUpPopup.style.display = 'block';
+    setTimeout(() => {
+      levelUpPopup.style.display = 'none';
+    }, 2200);
+  }
+
+  // Reset daily tasks once per calendar day
+  function resetDailyTasksIfNeeded() {
+    const today = getTodayDate();
+    if (data.lastDailyDate !== today) {
+      data.dailyTasksDoneToday = {};
+      data.lastDailyDate = today;
+      saveData();
+    }
+  }
+
+  // Render achievements and badges
+  function renderAchievements() {
+    achievementsDiv.innerHTML = '';
+    ACHIEVEMENTS.forEach(ach => {
+      const unlocked = data.achievementsUnlocked[ach.id];
+      const achDiv = document.createElement('div');
+      achDiv.className = 'achievement' + (unlocked ? ' unlocked' : '');
+      achDiv.title = ach.desc;
+      achDiv.innerHTML = `
+        <span class="achievement-icon">${ach.icon}</span>
+        <span class="achievement-title">${ach.title}</span>
+      `;
+      achievementsDiv.appendChild(achDiv);
+    });
+  }
+
+  // Check and unlock achievements
+  function checkAchievements() {
+    let unlockedSomething = false;
+    ACHIEVEMENTS.forEach(ach => {
+      if (!data.achievementsUnlocked[ach.id]) {
+        if (ach.type === 'level' && data.level >= ach.target) {
+          data.achievementsUnlocked[ach.id] = true;
+          unlockedSomething = true;
+        }
+        if (ach.type === 'stat' && data.stats[ach.stat] >= ach.target) {
+          data.achievementsUnlocked[ach.id] = true;
+          unlockedSomething = true;
+        }
+      }
+    });
+    if (unlockedSomething) {
+      saveData();
+      renderAchievements();
+    }
+  }
+
+  // Initialization
+  function init() {
+    loadData();
+    resetDailyTasksIfNeeded();
+
+    const dailyTasks = generateDailyTasks(data.level);
+    const sideTasks = generateSideTasks(data.level);
+
+    renderLevel();
+    renderStats();
+    renderTasks(dailyTasks, dailyTasksDiv, true);
+    renderTasks(sideTasks, sideTasksDiv, false);
+    renderAchievements();
+    checkAchievements();
+  }
+
+  init();
+
+  // Save periodically (in case)
+  setInterval(saveData, 15000);
+})();
+</script>
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #313156);
+    color: #eee;
+    margin: 0; padding: 20px;
+  }
+  #level-display {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  #title-display {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #7afcff;
+  }
+  #exp-bar {
+    background: #444466;
+    border-radius: 12px;
+    width: 100%;
+    height: 18px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+  #exp-fill {
+    background: #00ffff;
+    height: 100%;
+    width: 0%;
+    transition: width 0.7s ease-in-out;
+  }
+  #stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  .stat {
+    background: #25253d;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 8px #00ffff88;
+    user-select: none;
+  }
+  .stat-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #00ffffcc;
+  }
+  .stat-value {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .task {
+    background: #25253d;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px #00ffff88;
+  }
+  .task-desc {
+    flex: 1 1 auto;
+    font-weight: 500;
+  }
+  .task-exp {
+    margin-left: 10px;
+    color: #0ff;
+    font-weight: 600;
+    user-select: none;
+  }
+  .complete-btn {
+    background: #00cccc;
+    border: none;
+    color: #003333;
+    padding: 7px 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  .complete-btn:disabled {
+    background: #004444;
+    color: #007777;
+    cursor: default;
+  }
+  #achievements {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+  }
+  .achievement {
+    background: #222244;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 6px #00666688;
+    user-select: none;
+    transition: box-shadow 0.3s ease;
+    color: #555577;
+  }
+  .achievement.unlocked {
+    color: #00ffcc;
+    box-shadow: 0 0 15px #00ffccdd;
+  }
+  .achievement-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 5px;
+  }
+  #level-up-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #00ffffcc;
+    color: #002222;
+    font-size: 2.4rem;
+    padding: 20px 50px;
+    border-radius: 15px;
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 0 25px #00ffffee;
+    user-select: none;
+  }
+</style>
+
+
+
+
+<script>
+(() => {
+  const STAT_NAMES = ['Strength', 'Stamina', 'Intelligence', 'Agility', 'MP', 'Vitality', 'Endurance', 'Luck', 'Defense', 'Magic Attack'];
+
+  const LEVEL_TITLES = [
+    { level: 10, title: 'Easy' },
+    { level: 20, title: 'Easy+' },
+    { level: 30, title: 'Easy++' },
+    { level: 40, title: 'Easy+++' },
+    { level: 50, title: 'Medium' },
+    { level: 60, title: 'Medium+' },
+    { level: 70, title: 'Medium++' },
+    { level: 80, title: 'Intermediate' },
+    { level: 90, title: 'Hard' },
+    { level: 100, title: 'Hard++' },
+    { level: 110, title: 'Master' },
+    { level: 120, title: 'Master+' },
+    { level: 130, title: 'Grandmaster' },
+    { level: 140, title: 'Grandmaster+' },
+    { level: 150, title: 'Congratulations' }
+  ];
+
+  const ACHIEVEMENTS = [
+    { id: 'ach-level-10', title: 'First Steps', desc: 'Reach Level 10', type: 'level', target: 10, icon: '🥉' },
+    { id: 'ach-level-50', title: 'Getting Stronger', desc: 'Reach Level 50', type: 'level', target: 50, icon: '🥈' },
+    { id: 'ach-level-100', title: 'Elite Warrior', desc: 'Reach Level 100', type: 'level', target: 100, icon: '🥇' },
+    { id: 'ach-stat-strength-50', title: 'Powerhouse', desc: 'Reach 50 Strength', type: 'stat', stat: 'Strength', target: 50, icon: '💪' },
+    { id: 'ach-stat-luck-30', title: 'Lucky One', desc: 'Reach 30 Luck', type: 'stat', stat: 'Luck', target: 30, icon: '🍀' },
+    { id: 'ach-stat-mp-40', title: 'Mana Master', desc: 'Reach 40 MP', type: 'stat', stat: 'MP', target: 40, icon: '🔮' },
+  ];
+
+  let data = {
+    level: 1,
+    exp: 0,
+    expNeeded: 100,
+    stats: {},
+    dailyTasksDoneToday: {},
+    lastDailyDate: '',
+    sideTasksDone: {},
+    achievementsUnlocked: {}
+  };
+
+  for (const s of STAT_NAMES) data.stats[s] = 1;
+
+  const levelDisplay = document.getElementById('level-display');
+  const titleDisplay = document.getElementById('title-display');
+  const expFill = document.getElementById('exp-fill');
+  const statsDiv = document.getElementById('stats');
+  const dailyTasksDiv = document.getElementById('daily-tasks');
+  const sideTasksDiv = document.getElementById('side-tasks');
+  const achievementsDiv = document.getElementById('achievements');
+  const levelUpPopup = document.getElementById('level-up-popup');
+
+  function getTodayDate() {
+    const d = new Date();
+    return d.toISOString().slice(0,10);
+  }
+
+  function getExpNeeded(level) {
+    return Math.floor(100 * Math.pow(1.1, level - 1));
+  }
+
+  function getLevelTitle(level) {
+    for (let i = LEVEL_TITLES.length-1; i >= 0; i--) {
+      if (level >= LEVEL_TITLES[i].level) return LEVEL_TITLES[i].title;
+    }
+    return 'Novice';
+  }
+
+  function saveData() {
+    localStorage.setItem('soloLevelingFitnessData', JSON.stringify(data));
+  }
+  function loadData() {
+    const saved = localStorage.getItem('soloLevelingFitnessData');
+    if (saved) {
+      try {
+        const obj = JSON.parse(saved);
+        if (obj.level) data.level = obj.level;
+        if (obj.exp !== undefined) data.exp = obj.exp;
+        if (obj.expNeeded) data.expNeeded = obj.expNeeded;
+        if (obj.stats) data.stats = obj.stats;
+        if (obj.dailyTasksDoneToday) data.dailyTasksDoneToday = obj.dailyTasksDoneToday;
+        if (obj.lastDailyDate) data.lastDailyDate = obj.lastDailyDate;
+        if (obj.sideTasksDone) data.sideTasksDone = obj.sideTasksDone;
+        if (obj.achievementsUnlocked) data.achievementsUnlocked = obj.achievementsUnlocked;
+      } catch (e) {
+        console.error('Failed to parse saved data', e);
+      }
+    }
+  }
+
+  function generateDailyTasks(level) {
+const baseTasks = [
+  { description: 'Do push-ups', unit: 'reps', baseAmount: 10, baseExp: 40, stats: ['Strength'] },
+  { description: 'Do squats', unit: 'reps', baseAmount: 15, baseExp: 35, stats: ['Agility'] },
+  { description: 'Plank hold', unit: 'seconds', baseAmount: 30, baseExp: 45, stats: ['Endurance'] },
+  { description: 'Jumping jacks', unit: 'reps', baseAmount: 20, baseExp: 30, stats: ['Stamina'] },
+  { description: 'Jog in place', unit: 'minutes', baseAmount: 3, baseExp: 30, stats: ['Stamina'] },
+  { description: 'Sit-ups', unit: 'reps', baseAmount: 15, baseExp: 35, stats: ['Vitality'] },
+  { description: 'Wall sit', unit: 'seconds', baseAmount: 30, baseExp: 40, stats: ['Endurance'] }
+];
+
+    // Scale amount by level (easy linear scaling)
+    return baseTasks.map(t => ({
+      id: 'daily-' + t.description.toLowerCase().replace(/ /g, ''),
+      description: `${t.description} ${Math.floor(t.baseAmount + level/2)} ${t.unit}`,
+      exp: t.baseExp + Math.floor(level * 1.5),
+      stats: t.stats,
+    }));
+  }
+
+function generateSideTasks(level) {
+  const workoutMoves = [
+    'Push-ups',
+    'Sit-ups',
+    'Burpees',
+    'Squats',
+    'Lunges',
+    'Mountain climbers',
+    'Plank hold',
+    'Jumping jacks',
+    'Wall sits',
+    'High knees',
+    'Jog in place',
+    'Leg raises',
+    'Crunches',
+    'Wide push-ups',
+    'Triceps dips',
+    'Superman holds',
+    'Shoulder taps',
+    'Bicycle crunches',
+    'Side planks',
+    'Jump squats'
+  ];
+
+  const sideTasks = [];
+  for (let i = 1; i <= 100; i++) {
+    const move = workoutMoves[i % workoutMoves.length];
+    const reps = 10 + Math.floor(i / 5) + Math.floor(level / 2);
+    const stat = STAT_NAMES[i % STAT_NAMES.length];
+    sideTasks.push({
+      id: 'side-task-' + i,
+      description: `Do ${reps} ${move}`,
+      exp: 25 + (i % 10) * 3 + level,
+      stats: [stat],
+    });
+  }
+  return sideTasks;
+}
+
+
+  function renderLevel() {
+    levelDisplay.textContent = `Level ${data.level}`;
+    titleDisplay.textContent = getLevelTitle(data.level);
+    expFill.style.width = `${(data.exp / data.expNeeded) * 100}%`;
+  }
+
+  function renderStats() {
+    statsDiv.innerHTML = '';
+    for (const stat of STAT_NAMES) {
+      const statDiv = document.createElement('div');
+      statDiv.className = 'stat';
+      statDiv.innerHTML = `
+        <div class="stat-name">${stat}</div>
+        <div class="stat-value">${data.stats[stat]}</div>
+      `;
+      statsDiv.appendChild(statDiv);
+    }
+  }
+
+  function renderTasks(tasks, container, isDaily) {
+    container.innerHTML = '';
+    tasks.forEach(task => {
+      const taskDiv = document.createElement('div');
+      taskDiv.className = 'task';
+
+      const done = isDaily ? data.dailyTasksDoneToday[task.id] : data.sideTasksDone[task.id];
+      const disabled = done;
+
+      taskDiv.innerHTML = `
+        <div class="task-desc">${task.description}</div>
+        <div class="task-exp">+${task.exp} EXP</div>
+        <button class="complete-btn" ${disabled ? 'disabled' : ''}>${done ? 'Done' : 'Complete'}</button>
+      `;
+
+      const btn = taskDiv.querySelector('button');
+      btn.addEventListener('click', () => {
+        completeTask(task, isDaily);
+      });
+
+      container.appendChild(taskDiv);
+    });
+  }
+
+  function completeTask(task, isDaily) {
+    // Mark task done
+    if (isDaily) {
+      if (data.dailyTasksDoneToday[task.id]) return;
+      data.dailyTasksDoneToday[task.id] = true;
+    } else {
+      if (data.sideTasksDone[task.id]) return;
+      data.sideTasksDone[task.id] = true;
+    }
+    gainExp(task.exp);
+    // Increase stats - distribute exp/5 per related stat (rounded)
+    const perStat = Math.max(1, Math.floor(task.exp / (task.stats.length * 5)));
+    for (const stat of task.stats) {
+      data.stats[stat] += perStat;
+    }
+    saveData();
+    refreshUI();
+  }
+
+  function gainExp(amount) {
+    data.exp += amount;
+    while (data.exp >= data.expNeeded) {
+      data.exp -= data.expNeeded;
+      data.level++;
+      data.expNeeded = getExpNeeded(data.level);
+      showLevelUpPopup();
+    }
+  }
+
+  function showLevelUpPopup() {
+    levelUpPopup.style.display = 'block';
+    setTimeout(() => {
+      levelUpPopup.style.display = 'none';
+    }, 2200);
+  }
+
+  function resetDailyTasksIfNeeded() {
+    const today = getTodayDate();
+    if (data.lastDailyDate !== today) {
+      data.dailyTasksDoneToday = {};
+      data.lastDailyDate = today;
+      saveData();
+    }
+  }
+
+  function renderAchievements() {
+    achievementsDiv.innerHTML = '';
+    ACHIEVEMENTS.forEach(ach => {
+      const unlocked = data.achievementsUnlocked[ach.id];
+      const achDiv = document.createElement('div');
+      achDiv.className = 'achievement' + (unlocked ? ' unlocked' : '');
+      achDiv.title = ach.desc;
+      achDiv.innerHTML = `
+        <span class="achievement-icon">${ach.icon}</span>
+        <span class="achievement-title">${ach.title}</span>
+      `;
+      achievementsDiv.appendChild(achDiv);
+    });
+  }
+
+  function checkAchievements() {
+    let unlockedSomething = false;
+    ACHIEVEMENTS.forEach(ach => {
+      if (!data.achievementsUnlocked[ach.id]) {
+        if (ach.type === 'level' && data.level >= ach.target) {
+          data.achievementsUnlocked[ach.id] = true;
+          unlockedSomething = true;
+        }
+        if (ach.type === 'stat' && data.stats[ach.stat] >= ach.target) {
+          data.achievementsUnlocked[ach.id] = true;
+          unlockedSomething = true;
+        }
+      }
+    });
+    if (unlockedSomething) {
+      saveData();
+      renderAchievements();
+    }
+  }
+
+  function refreshUI() {
+    renderLevel();
+    renderStats();
+    renderTasks(generateDailyTasks(data.level), dailyTasksDiv, true);
+    renderTasks(generateSideTasks(data.level), sideTasksDiv, false);
+    checkAchievements();
+  }
+
+  function init() {
+    loadData();
+    resetDailyTasksIfNeeded();
+    refreshUI();
+  }
+
+  init();
+
+  // Auto save every 15 seconds
+  setInterval(saveData, 15000);
+})();
+</script>
+
+</body>
 </html>
